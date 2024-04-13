@@ -1,10 +1,14 @@
 # Supermarket Case Study by Oliver Roberts
 
+---
+
 ### Project Overview
 
 This data analysis project aims to provide insights into customer trends, sales patterns and client satisfaction in order to drive informed decision making for a Supermarket.
 
 The growth of supermarkets in highly populated cities are increasing and competition is high. Therefore using data to derive a deeper understanding of customer behaviour is of the utmost importance to ensure sales growth and customer satisfaction. This dataset consists of historical sales of a supermarket which was recorded in 3 different branches over a period of 3 months.
+
+---
 
 ### Defining the business tasks
 
@@ -27,16 +31,22 @@ As well as exploring the correlation between:
 - Ratings vs city
 - Ratings vs gender
 
+---
+
 ### Data Sources
 
 This publicly available data was obtained on Kaggle [here](https://www.kaggle.com/datasets/lovishbansal123/sales-of-a-supermarket)
 
 The table used in this case study is supermarket_sales.csv
 
+---
+
 ### Tools used in analysis
 
-- SQL for EDA and manipulation
-- Tableau for charts and reporting
+- SQL for cleaning tasks, exploratory data analysis and manipulation
+- Tableau for charts and a dashboard
+
+---
 
 ### Data Cleaning and EDA 
 
@@ -45,14 +55,18 @@ In the initial data preparation phase, the following data cleaning tasks are to 
 - Renaming columns to improve readability and avoid clashing with functions
 - Checking for missing values
 - Checking that data formatting is correct for variables
+
+The following manipulations also need to be done:
+
 - Creating columns for Weekday and for Month
 - Creating a day and night variable based on time of transaction
 
-#### On to the tasks
+---
 
-Renaming of columns
+#### Renaming of columns
 
 ```sql
+
 EXEC sp_rename 'dbo.supermarket_sales.Invoice id', 'invoice_id', 'COLUMN'
 GO
 
@@ -103,10 +117,13 @@ GO
 
 EXEC sp_rename 'dbo.supermarket_sales.Rating', 'rating', 'COLUMN'
 GO;
+
 ```
-Checking for missing values
+
+#### Checking for missing values
 
 ```sql
+
 SELECT *
 FROM dbo.supermarket_sales
 WHERE invoice_id IS NULL
@@ -191,45 +208,92 @@ SELECT *
 FROM dbo.supermarket_sales
 WHERE rating IS NULL
 GO;
+
 ```
-Changing the format of the transaction_date column to date format
+
+#### Changing the format of the transaction_date column to date format
 
 ```sql
+
 ALTER TABLE dbo.supermarket_sales
 ALTER COLUMN transaction_date date;
+
 ```
-Changing the format of transaction_time to time format
+
+#### Changing the format of transaction_time variable to time format
 
 ```sql
+
 ALTER TABLE dbo.supermarket_sales
 ALTER COLUMN transaction_time time(0);
+
 ```
 
-Creating a weekday variable from the transaction_date column
+#### Creating a weekday variable from the transaction_date column
 
 ```sql
+
 SELECT *
 ,DATENAME(weekday,transaction_date) AS week_day
-FROM dbo.supermarket_sales
+FROM dbo.supermarket_sales;
+
 ```
 
-Creating time_of_day variable from transaction_time column
+#### Creating time_of_day variable from transaction_time column
 
 ```sql
+
 SELECT *
      , CASE WHEN transaction_time <  '08:00' THEN 'Night'
             WHEN transaction_time >= '20:00' THEN 'Night'
             ELSE 'Day' END AS time_of_day
 FROM  dbo.supermarket_sales;
+
 ```
 
-Creating month variable from transaction_date
+#### Creating month variable from transaction_date:
 
 ```sql
+
 SELECT *
 ,
   MONTH(dbo.supermarket_sales.transaction_date) AS month
 FROM dbo.supermarket_sales;
+
+```
+
+#### Changing the data type of order_value to decimal:
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN order_value decimal;
+
+```
+
+#### Changing the data type of profit to decimal:
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN profit decimal;
+
+```
+
+---
+
+#### Now on to the exploratory phase : 
+
+**Q1** : Determine the best performing product line, both in total sales and in profit margin
+
+```sql
+
+SELECT product_line,
+	SUM(order_value) AS total_order_value,
+	SUM(profit) AS total_profit
+FROM dbo.supermarket_sales
+GROUP BY product_line;
+
 ```
 
 

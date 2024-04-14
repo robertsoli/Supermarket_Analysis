@@ -261,7 +261,7 @@ FROM dbo.supermarket_sales;
 ```sql
 
 SELECT *
-     , CASE WHEN transaction_time <  '08:00' THEN 'Night'
+     , CASE WHEN transaction_time <  '06:00' THEN 'Night'
             WHEN transaction_time >= '18:00' THEN 'Night'
             ELSE 'Day' END AS time_of_day
 FROM  dbo.supermarket_sales;
@@ -294,6 +294,60 @@ ALTER COLUMN order_value decimal;
 
 ALTER TABLE dbo.supermarket_sales
 ALTER COLUMN profit decimal;
+
+```
+
+#### Changing data format of unit_price to decimal
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN unit_price decimal;
+
+```
+
+#### Changing data format of quantity to int
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN quantity int;
+
+```
+
+#### Changing data format of tax_five_percent to decimal
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN tax_five_percent decimal(5,2);
+
+```
+
+#### Changing the format of cogs to decimal
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN cogs decimal;
+
+```
+
+#### Changing data format of gross_margin_percentage to decimal
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN gross_margin_percentage decimal;
+
+```
+
+#### Changing data format of rating to int
+
+```sql
+
+ALTER TABLE dbo.supermarket_sales
+ALTER COLUMN rating int;
 
 ```
 

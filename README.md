@@ -13,14 +13,31 @@ The growth of supermarkets in highly populated cities are increasing and competi
 ### Defining the business tasks
 
 Q1 : Determine the best performing product line, both in total sales and in profit margin
+
+
 Q2 : Determine the peak hour of sales during the day
+
+
 Q3 : Determine the peak weekday for sales, as well as lowest performing day to determine when to run promotions and discounts
+
+
 Q4 : Explore customer ratings to determine the best rated products, and the worst rated products 
+
+
 Q5 : Calculate the sales total by location
+
+
 Q6 : Determine ratings by location
+
+
 Q7 : Calculate gross income by payment method 
+
+
 Q8 : Calculate the sales total by product line, split by Gender
+
+
 Q9 : Determine gross income by customer type
+
 
 As well as exploring the correlation between:
 
@@ -63,7 +80,7 @@ The following manipulations also need to be done:
 
 ---
 
-#### Renaming of columns
+#### Renaming of variables
 
 ```sql
 
@@ -211,7 +228,7 @@ GO;
 
 ```
 
-#### Changing the format of the transaction_date column to date format
+#### Changing format of the transaction_date variable to date format
 
 ```sql
 
@@ -220,7 +237,7 @@ ALTER COLUMN transaction_date date;
 
 ```
 
-#### Changing the format of transaction_time variable to time format
+#### Changing format of transaction_time variable to time format
 
 ```sql
 
@@ -245,7 +262,7 @@ FROM dbo.supermarket_sales;
 
 SELECT *
      , CASE WHEN transaction_time <  '08:00' THEN 'Night'
-            WHEN transaction_time >= '20:00' THEN 'Night'
+            WHEN transaction_time >= '18:00' THEN 'Night'
             ELSE 'Day' END AS time_of_day
 FROM  dbo.supermarket_sales;
 
@@ -262,7 +279,7 @@ FROM dbo.supermarket_sales;
 
 ```
 
-#### Changing the data type of order_value to decimal:
+#### Changing data format of order_value to decimal:
 
 ```sql
 
@@ -271,7 +288,7 @@ ALTER COLUMN order_value decimal;
 
 ```
 
-#### Changing the data type of profit to decimal:
+#### Changing data format of profit to decimal:
 
 ```sql
 

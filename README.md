@@ -378,5 +378,4 @@ GROUP BY product_line;
 
 
 
-
  

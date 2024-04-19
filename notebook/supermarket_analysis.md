@@ -387,7 +387,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/a89b2c7d-7c50-4a76-9b11-f25e1dc51135)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/96a1d904-9290-4b9f-8071-599f4845b00a)
 
 ---
 

@@ -228,6 +228,12 @@ GO;
 
 ```
 
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/2f42f145-be8f-4ff1-b8ab-bb83a34d4037)
+
+---
+
 #### Changing format of the transaction_date variable to date format
 
 ```sql
@@ -363,6 +369,20 @@ SELECT product_line,
 	SUM(order_value) AS total_order_value,
 	SUM(profit) AS total_profit
 FROM dbo.supermarket_sales
-GROUP BY product_line;
+GROUP BY product_line
+ORDER BY total_order_value DESC;
 
 ```
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/fc4e80d1-b856-444d-b481-38fd52161130)
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/851dc8f4-c51e-43a0-9a55-3c597ee0b68d)
+
+---
+
+
+

@@ -256,9 +256,8 @@ ALTER COLUMN transaction_time time(0);
 
 ```sql
 
-SELECT *
-,DATENAME(weekday,transaction_date) AS week_day
-FROM dbo.supermarket_sales;
+ALTER TABLE dbo.supermarket_sales
+ADD week_day AS DATENAME(weekday,transaction_date);
 
 ```
 
@@ -383,6 +382,23 @@ ORDER BY total_order_value DESC;
 ![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/851dc8f4-c51e-43a0-9a55-3c597ee0b68d)
 
 ---
+
+**Q2** : Determine the peak hour of sales during the day
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/a89b2c7d-7c50-4a76-9b11-f25e1dc51135)
+
+---
+
+**Q3** : Determine the peak weekday for sales
+
+---
+
+
+
+
+
 
 
 

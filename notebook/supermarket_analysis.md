@@ -280,7 +280,7 @@ UPDATE dbo.supermarket_sales set time_of_day =
 ```sql
 
 ALTER TABLE dbo.supermarket_sales
-ADD month_name_full  AS DATENAME(MONTH, transaction_date)
+ADD month_name_full  AS DATENAME(MONTH, transaction_date);
 
 ```
 
@@ -379,7 +379,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/851dc8f4-c51e-43a0-9a55-3c597ee0b68d)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/0f2d3a93-af39-46b0-8f15-d5f8a61b4306)
 
 ---
 
@@ -395,7 +395,17 @@ ORDER BY total_order_value DESC;
 
 ---
 
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/482ec442-ae60-4f0c-a355-2ababbaa9cfe)
 
+---
+
+**Q4** : Explore customer ratings to determine the best rated products, and the worst rated product lines
+
+---
+
+
+
+---
 
 
 

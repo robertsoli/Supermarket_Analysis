@@ -265,11 +265,13 @@ ADD week_day AS DATENAME(weekday,transaction_date);
 
 ```sql
 
-SELECT *
-     , CASE WHEN transaction_time <  '06:00' THEN 'Night'
-            WHEN transaction_time >= '18:00' THEN 'Night'
-            ELSE 'Day' END AS time_of_day
-FROM  dbo.supermarket_sales;
+ALTER TABLE dbo.supermarket_sales ADD time_of_day VARCHAR(50)
+GO
+
+UPDATE dbo.supermarket_sales set time_of_day =
+       (CASE WHEN transaction_time <  '08:00' THEN 'Night'
+        WHEN transaction_time >= '18:00' THEN 'Night'
+        ELSE 'Day' END);
 
 ```
 
@@ -277,10 +279,8 @@ FROM  dbo.supermarket_sales;
 
 ```sql
 
-SELECT *
-,
-  MONTH(dbo.supermarket_sales.transaction_date) AS month
-FROM dbo.supermarket_sales;
+ALTER TABLE dbo.supermarket_sales
+ADD month_name_full  AS DATENAME(MONTH, transaction_date)
 
 ```
 

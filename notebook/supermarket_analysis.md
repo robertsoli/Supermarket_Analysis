@@ -399,7 +399,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-**Q4** : Explore customer ratings to determine the best rated products, and the worst rated product lines
+**Q4** : Explore customer ratings to determine the best and worst rated product lines
 
 ---
 

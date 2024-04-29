@@ -379,7 +379,8 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/0f2d3a93-af39-46b0-8f15-d5f8a61b4306)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8ebfeb1f-41c5-45e7-8ee5-586dd806ac32)
+
 
 ---
 
@@ -407,16 +408,36 @@ ORDER BY total_order_value DESC;
 
 ---
 
-**Q5** : Calculate total sales by location
+**Q5** : Calculate total sales by branch
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/24178d74-c0d6-4d99-ba66-65a087ee1d6a)
-
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/17f62ef0-cec0-426a-b2d2-81331a93816d)
 
 ---
 
+**Q6** : Determine ratings by branch
 
+---
 
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/75727abe-18b3-4e17-97bf-fbbffaf4b8a4)
+
+---
+
+**Q7** : Calculate total sales by payment method 
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/a260e835-e6de-4a1f-95d9-d052f98c8e12)
+
+---
+
+**Q8** : Product line performance calculated by Gender
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/86cdbd67-7300-4702-8e18-6f4893b07dc4)
+
+---
 
 

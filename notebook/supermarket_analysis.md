@@ -403,10 +403,18 @@ ORDER BY total_order_value DESC;
 
 ---
 
-
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/e2cbd8c0-539a-4fff-8ad8-15a6275740e6)
 
 ---
 
+**Q5** : Calculate total sales by location
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/24178d74-c0d6-4d99-ba66-65a087ee1d6a)
+
+
+---
 
 
 

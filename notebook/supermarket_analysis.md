@@ -12,41 +12,32 @@ The growth of supermarkets in highly populated cities are increasing and competi
 
 ### Defining the business tasks
 
-Q1 : Determine the best performing product line, both in total sales and in profit margin
+**Q1** : Determine the best performing product line, both in total sales and in profit margin over the first quarter of 2019
 
 
-Q2 : Determine the peak hour of sales during the day
+**Q2** : Determine the peak hour of sales during the day to inform staff lunch breaks and over/understaffed hours
 
 
-Q3 : Determine the peak weekday for sales, as well as lowest performing day to determine when to run promotions and discounts
+**Q3** : Determine the peak weekday for sales, as well as lowest performing day to determine when to run promotions and discounts
 
 
-Q4 : Explore customer ratings to determine the best rated products, and the worst rated products 
+**Q4** : Explore customer ratings to determine the best rated products, and the worst rated products 
 
 
-Q5 : Calculate the sales total by location
+**Q5** : Calculate the sales total by location
 
 
-Q6 : Determine ratings by location
+**Q6** : Determine ratings by location
 
 
-Q7 : Calculate gross income by payment method 
+**Q7** : Calculate sales by payment method to see if there is a disproportionate payment method
 
 
-Q8 : Calculate the sales total by product line, split by Gender
+**Q8** : Product line sales split by gender to determine which product lines sell more commonly to a certain gender
 
 
-Q9 : Determine gross income by customer type
+**Q9** : Determine profit by customer type, to determine whether to motivate non members to attain membership
 
-
-As well as exploring the correlation between:
-
-- Sales total and age
-- Sales total by category and age
-- Customer type vs ratings
-- Customer type vs sales volume
-- Ratings vs city
-- Ratings vs gender
 
 ---
 
@@ -60,7 +51,7 @@ The table used in this case study is supermarket_sales.csv
 
 ### Tools used in analysis
 
-- SQL for cleaning tasks, exploratory data analysis and manipulation
+- Microsoft SQL Server Management Studio 20, using T-SQL for cleaning tasks, exploratory data analysis and manipulation
 - Tableau for charts and a dashboard
 
 ---
@@ -73,7 +64,7 @@ In the initial data preparation phase, the following data cleaning tasks are to 
 - Checking for missing values
 - Checking that data formatting is correct for variables
 
-The following manipulations also need to be done:
+The following manipulation also need to be done:
 
 - Creating columns for Weekday and for Month
 - Creating a day and night variable based on time of transaction
@@ -379,8 +370,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8ebfeb1f-41c5-45e7-8ee5-586dd806ac32)
-
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8c93c451-df28-4f00-8db5-bed99b972e65)
 
 ---
 
@@ -388,7 +378,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/96a1d904-9290-4b9f-8071-599f4845b00a)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8f34ff07-238a-4317-af83-a25ec334a185)
 
 ---
 
@@ -396,7 +386,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/482ec442-ae60-4f0c-a355-2ababbaa9cfe)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/be5d8507-98cf-4165-929c-28ac1e8b6bc5)
 
 ---
 
@@ -404,7 +394,8 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/e2cbd8c0-539a-4fff-8ad8-15a6275740e6)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/334a2d2f-1dfc-4571-acb6-2cfcd17f77b4)
+
 
 ---
 
@@ -420,7 +411,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/75727abe-18b3-4e17-97bf-fbbffaf4b8a4)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/3297d5b5-da03-40c1-a677-e7b34c6fe0d7)
 
 ---
 
@@ -428,16 +419,22 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/a260e835-e6de-4a1f-95d9-d052f98c8e12)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8d2979b5-b2da-4f2b-b77a-57abab4cb916)
 
 ---
 
-**Q8** : Product line performance calculated by Gender
+**Q8** : Product line performance calculated by gender
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/86cdbd67-7300-4702-8e18-6f4893b07dc4)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8d5ca9b9-f840-442e-a237-5f9e83669de4)
 
 ---
 
+**Q9** : Determine profit by customer type
 
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/3e76e99f-fa5d-4972-93b0-88ed20e0c57c)
+
+---

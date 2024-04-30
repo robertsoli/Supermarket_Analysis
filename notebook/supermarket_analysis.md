@@ -12,32 +12,31 @@ The growth of supermarkets in highly populated cities are increasing and competi
 
 ### Defining the business tasks
 
-**Q1** : Determine the best performing product line, both in total sales and in profit margin over the first quarter of 2019
+**Q1** : Determine the best performing product line, both in total sales and in profit margin over the first quarter of 2019.
 
 
-**Q2** : Determine the peak hour of sales during the day to inform staff lunch breaks and over/understaffed hours
+**Q2** : Determine the peak hour of sales during the day to better plan staff shift roster.
 
 
-**Q3** : Determine the peak weekday for sales, as well as lowest performing day to determine when to run promotions and discounts
+**Q3** : Determine the peak weekday for sales, as well as lowest performing day to determine when to run promotions and discounts.
 
 
-**Q4** : Explore customer ratings to determine the best rated products, and the worst rated products 
+**Q4** : Explore customer ratings to determine the best rated product lines, and the worst rated product lines.
 
 
-**Q5** : Calculate the sales total by location
+**Q5** : Calculate monthly sales totals by branch, to determine which store needs more marketing attention.
 
 
-**Q6** : Determine ratings by location
+**Q6** : Determine ratings by branch to give focus to the reasons behind the worst rated branch.
 
 
-**Q7** : Calculate sales by payment method to see if there is a disproportionate payment method
+**Q7** : Calculate sales by payment method to see if there is a preferred payment method.
 
 
-**Q8** : Product line sales split by gender to determine which product lines sell more commonly to a certain gender
+**Q8** : Product line sales split by gender to determine which product lines sell more commonly to a certain gender. 
 
 
-**Q9** : Determine profit by customer type, to determine whether to motivate non members to attain membership
-
+**Q9** : Determine profit by customer type, to determine whether to motivate non members to attain membership.
 
 ---
 
@@ -52,7 +51,7 @@ The table used in this case study is supermarket_sales.csv
 ### Tools used in analysis
 
 - Microsoft SQL Server Management Studio 20, using T-SQL for cleaning tasks, exploratory data analysis and manipulation
-- Tableau for charts and a dashboard
+- Tableau for related charts and a dashboard
 
 ---
 
@@ -62,12 +61,11 @@ In the initial data preparation phase, the following data cleaning tasks are to 
 
 - Renaming columns to improve readability and avoid clashing with functions
 - Checking for missing values
-- Checking that data formatting is correct for variables
 
 The following manipulation also need to be done:
 
-- Creating columns for Weekday and for Month
-- Creating a day and night variable based on time of transaction
+- Creating new variables needed in analysis
+- Changing data formatting for existing variables
 
 ---
 
@@ -386,7 +384,8 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/be5d8507-98cf-4165-929c-28ac1e8b6bc5)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/04d1816e-16f0-444a-b1e8-549c859d8ef9)
+
 
 ---
 
@@ -399,7 +398,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-**Q5** : Calculate total sales by branch
+**Q5** : Calculate total monthly sales by branch
 
 ---
 
@@ -435,6 +434,8 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/3e76e99f-fa5d-4972-93b0-88ed20e0c57c)
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/a6c51b02-de55-4b87-9de4-11fb4815fc7f)
 
 ---
+
+

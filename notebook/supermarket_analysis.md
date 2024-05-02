@@ -18,7 +18,7 @@ The growth of supermarkets in highly populated cities are increasing and competi
 **Q2** : Determine the peak hour of sales during the day to better plan staff shift roster.
 
 
-**Q3** : Determine the peak weekday for sales, as well as lowest performing day to determine when to run promotions and discounts.
+**Q3** : Determine the peak weekdays per month for sales, as well as lowest performing days to determine when to run promotions and discounts.
 
 
 **Q4** : Explore customer ratings to determine the best rated product lines, and the worst rated product lines.
@@ -380,7 +380,7 @@ ORDER BY total_order_value DESC;
 
 ---
 
-**Q3** : Determine the peak weekday for sales
+**Q3** : Determine the peak weekdays per month for sales
 
 ---
 
@@ -393,6 +393,26 @@ ORDER BY total_order_value DESC;
 
 ---
 
+```sql
+SELECT product_line,
+COUNT (
+CASE WHEN rating >= 7 then 'Positive' END) AS positive_rating,
+COUNT (
+CASE WHEN rating BETWEEN 5 AND 6 THEN 'Average' END) AS moderate_rating,
+COUNT (
+CASE WHEN rating < 5 THEN 'Negative' END) AS negative_rating  
+FROM dbo.supermarket_sales
+WHERE product_line IS NOT NULL
+GROUP BY product_line
+ORDER BY positive_rating DESC;
+```
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/86e9c739-a1f5-4d2e-a4b2-438254dd2f27)
+
+---
+
 ![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/334a2d2f-1dfc-4571-acb6-2cfcd17f77b4)
 
 
@@ -402,11 +422,45 @@ ORDER BY total_order_value DESC;
 
 ---
 
+```sql
+SELECT city, month_name_full AS month_name, SUM(order_value) AS total_sales
+FROM dbo.supermarket_sales
+WHERE city IS NOT NULL
+GROUP BY city, month_name_full
+ORDER BY city
+```
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/70a89d6d-d114-484a-9062-87b6a0d4fda1)
+
+---
+
 ![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/17f62ef0-cec0-426a-b2d2-81331a93816d)
 
 ---
 
 **Q6** : Determine ratings by branch
+
+---
+
+```sql
+SELECT city,
+COUNT (
+CASE WHEN rating >= 7 then 'Positive' END) AS positive_rating,
+COUNT (
+CASE WHEN rating BETWEEN 5 AND 6 THEN 'Average' END) AS moderate_rating,
+COUNT (
+CASE WHEN rating < 5 THEN 'Negative' END) AS negative_rating  
+FROM dbo.supermarket_sales
+WHERE city IS NOT NULL
+GROUP BY city
+ORDER BY positive_rating DESC;
+```
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/61923a3d-07b3-49ea-a3a3-e5b6e5bfabac)
 
 ---
 
@@ -438,4 +492,75 @@ ORDER BY total_order_value DESC;
 
 ---
 
+#### Descriptive Analysis and Recommendations
 
+For business task **Q1** : Determine the best performing product line, both in total sales and in profit margin
+
+- The top performing product line is Food and Beverages, which is to be expected from a supermarket providing daily produce for customers.
+
+- With profit margin being identical across product lines, Food and Beverages also brings in the most profit for the business.
+
+> [!NOTE]
+> There is not a drastic difference in product line performance with the top 5 product lines being within $4K of the top over a 3 month period
+
+#### Recommendations
+
+- Ensure accurate stock ordering of the Food and Beverage product line to make sure there is always stock.
+
+- Look into why the Health and Beauty product line is the lowest performing range of products. If it is pricing then offer discounts, if it is product quality or range then a focus on sourcing should be looked at.
+
+---
+
+For business task **Q2** : Determine the peak hour of sales during the day
+
+- Peaks in orders occur at 10AM, 1PM, 3PM and at the highest point 7PM
+  
+- Dips in customer purchases occur at 2PM and 5PM
+
+- Possible reasons for peak times include:
+  
+	- 10AM : Customers purchasing daily consumables like bread and milk.
+   	- 1PM : Conventional work lunch break.
+   	- 3PM : Unconventional work lunch break, or customers wanting to dodge the other busy times of the day.
+   	- 7PM : Post work shopping and/or dinner consumables.
+
+#### Recommendations
+
+- The opening time of 10AM is quite late according to industry norm, opening shop at 7AM would no doubt boost revenue.
+
+- Scheduling of breaks for employees should be centred around these busy periods of the day.
+
+- Restocking of shelves, deliveries and stock checks should be conducted during the least busy hours, namely 2PM and 5PM.
+
+- Ensure security staff are at attention during the busiest hours to minimize losses
+
+---
+
+For business task **Q3** : Determine the peak weekdays per month for sales
+
+- Above average peaks are observed on Tuesday, Thursday and Saturday in January.
+
+- Above average peaks are observed on Friday and Sunday in February.
+
+- Above average peaks are observed on Tuesday, Friday and Saturday in March.
+
+#### Recommendations
+
+- Plan staff shifts to ensure the shop is fully staffed on the peak days observed.
+
+- Ensure that staff members off days are on the quietest days.
+
+- These data could be used to inform the buying department on when to schedule stock deliveries.
+
+---
+
+For business task **Q4** : Explore customer ratings to determine the best and worst rated product lines
+
+- The Home and Lifestyle product line received the most 4 star ratings 
+
+- The Fashion Accessories product line received the most 10 star ratings
+
+- 
+
+> [!NOTE]
+> Important to note that there are varying amounts of reviews for the different product lines

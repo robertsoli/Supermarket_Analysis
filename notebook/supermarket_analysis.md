@@ -15,28 +15,28 @@ The growth of supermarkets in highly populated cities are increasing and competi
 **Q1** : Determine the best performing product line, both in total sales and in profit margin over the first quarter of 2019.
 
 
-**Q2** : Determine the peak hour of sales during the day to better plan staff shift roster.
+**Q2** : Determine the peak hour of sales during the day.
 
 
-**Q3** : Determine the peak weekdays per month for sales, as well as lowest performing days to determine when to run promotions and discounts.
+**Q3** : Determine the peak and lowest performing weekdays per month for sales.
 
 
 **Q4** : Explore customer ratings to determine the best rated product lines, and the worst rated product lines.
 
 
-**Q5** : Calculate monthly sales totals by branch, to determine which store needs more marketing attention.
+**Q5** : Calculate monthly sales totals per branch.
 
 
-**Q6** : Determine ratings by branch to give focus to the reasons behind the worst rated branch.
+**Q6** : Explore ratings by branch.
 
 
-**Q7** : Calculate sales by payment method to see if there is a preferred payment method.
+**Q7** : Calculate sales by payment method.
 
 
-**Q8** : Product line sales split by gender to determine which product lines sell more commonly to a certain gender. 
+**Q8** : Calculate sales by product line, split by gender. 
 
 
-**Q9** : Determine profit by customer type, to determine whether to motivate non members to attain membership.
+**Q9** : Determine profit by customer type.
 
 ---
 
@@ -376,6 +376,20 @@ ORDER BY total_order_value DESC;
 
 ---
 
+```sql
+SELECT COUNT(invoice_id) AS hourly_orders
+FROM dbo.supermarket_sales
+GROUP BY
+DATEPART(HOUR, transaction_time) 
+ORDER BY DATEPART(HOUR, transaction_time) 
+```
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/40bb0081-5694-4e61-b98c-4af73e7bdd75)
+
+---
+
 ![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8f34ff07-238a-4317-af83-a25ec334a185)
 
 ---
@@ -384,8 +398,27 @@ ORDER BY total_order_value DESC;
 
 ---
 
-![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/04d1816e-16f0-444a-b1e8-549c859d8ef9)
+```sql
+SELECT month_name_full, week_day, SUM(order_value) AS daily_sales
+FROM dbo.supermarket_sales
+WHERE month_name_full IS NOT NULL
+GROUP BY month_name_full, week_day
+ORDER BY 
+	CASE WHEN month_name_full = 'January' THEN 1
+             WHEN month_name_full = 'February' THEN 2
+             WHEN month_name_full = 'March' THEN 3
+             WHEN week_day = 'Monday' THEN 1
+             END,
+             daily_sales DESC
+```
 
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/3f68f034-0a1a-48d2-9fb0-ccd7f87962e2)
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/04d1816e-16f0-444a-b1e8-549c859d8ef9)
 
 ---
 
@@ -472,6 +505,19 @@ ORDER BY positive_rating DESC;
 
 ---
 
+```sql
+SELECT payment_method, SUM(order_value) AS sales_total
+FROM dbo.supermarket_sales
+WHERE payment_method IS NOT NULL
+GROUP BY payment_method
+ORDER BY sales_total DESC
+```
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/dd1bf87f-20ad-4b1c-86dd-dfff9c7e0c2f)
+
+---
+
 ![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8d2979b5-b2da-4f2b-b77a-57abab4cb916)
 
 ---
@@ -480,11 +526,44 @@ ORDER BY positive_rating DESC;
 
 ---
 
+```sql
+SELECT product_line, gender, SUM(order_value) AS total_sales
+FROM dbo.supermarket_sales
+WHERE product_line IS NOT NULL
+GROUP BY product_line, gender
+ORDER BY product_line, gender, total_sales DESC
+```
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/dfd8afcb-82c4-4d9a-981c-80e876520383)
+
+---
+
 ![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/8d5ca9b9-f840-442e-a237-5f9e83669de4)
 
 ---
 
 **Q9** : Determine profit by customer type
+
+---
+
+```sql
+SELECT customer_type, month_name_full, SUM(profit) AS total_profit
+FROM dbo.supermarket_sales
+WHERE customer_type IS NOT NULL
+GROUP BY customer_type, month_name_full
+ORDER BY 
+CASE	WHEN month_name_full = 'January' THEN 1
+		WHEN month_name_full = 'February' THEN 2
+		WHEN month_name_full = 'March' THEN 3
+		END
+		, customer_type;
+```
+
+---
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/21e3ab73-f4ca-4150-9f15-61e5cdb67a16)
 
 ---
 

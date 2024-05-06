@@ -688,8 +688,19 @@ For business task **Q6** : Explore ratings by branch
 
 ---
 
-For business task **Q7** : 
+For business task **Q7** : Calculate sales by payment method
 
+- Cash purchases accounted for 35% of sales.
+
+- Ewallet purchases accounted for 34% of sales.
+
+- Credit Card purchases accounted for 31% of sales.
+
+#### Recommendations
+
+- Incentivize customers to use cash to avoid credit card cost to company.
+
+- 
 
 
 

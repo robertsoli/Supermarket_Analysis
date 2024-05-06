@@ -24,7 +24,7 @@ The growth of supermarkets in highly populated cities are increasing and competi
 **Q4** : Explore customer ratings to determine the best rated product lines, and the worst rated product lines.
 
 
-**Q5** : Calculate monthly sales totals per branch.
+**Q5** : Explore monthly sales patterns per branch.
 
 
 **Q6** : Explore ratings by branch.
@@ -451,7 +451,7 @@ ORDER BY positive_rating DESC;
 
 ---
 
-**Q5** : Calculate total monthly sales by branch
+**Q5** : Explore monthly sales patterns per branch
 
 ---
 
@@ -473,7 +473,7 @@ ORDER BY city
 
 ---
 
-**Q6** : Determine ratings by branch
+**Q6** : Explore ratings by branch
 
 ---
 
@@ -629,17 +629,70 @@ For business task **Q3** : Determine the peak weekdays per month for sales
 
 - Ensure that staff members off days are on the quietest days.
 
-- These data could be used to inform the buying department on when to schedule stock deliveries.
+- These data could be used to inform the buying department on when to schedule stock deliveries during quieter days.
 
 ---
 
 For business task **Q4** : Explore customer ratings to determine the best and worst rated product lines
 
-- The Home and Lifestyle product line received the most 4 star ratings 
+- The Home and Lifestyle product line received the most 4 star ratings and the least 10 star ratings.
 
-- The Fashion Accessories product line received the most 10 star ratings
+- The Fashion Accessories product line received the most 10 star ratings and the least 4 star ratings.
 
-- 
+- The distribution of positive, moderate and negative ratings is fairly even amongs the remaining product lines. 
 
-> [!NOTE]
-> Important to note that there are varying amounts of reviews for the different product lines
+
+#### Recommendations
+
+- Take a deeper look into the specific ratings, and determine if there is a common thread among user experiences to inform strategy. 
+
+- If there are problem products in the Home and Lifestyle product line that are leading to the negative ratings, consider replacing them with superior products.
+
+- Assign a staff member to investigate negative ratings, in an attempt to resolve these experiences for clients.
+
+---
+
+For business task **Q5** : Explore monthly sales patterns per branch
+
+- Naypyitaw had the highest monthly sales total for the first quarter, being January at $ 40432.
+
+- Yangon had the largest dip in monthly sales, being the lowest performing month of February at $ 29856, but had the highest monthly sales for March at $ 37663.
+
+- Mandalay shows the most consistent sales pattern for the first quarter, and the highest sales for February of the three branches at $ 34421.
+
+#### Recommendations
+
+- February is the poorest performing month for sales across the board, which needs to be investigated and addressed. Looking into the products sold and operational efficiency at the Mandalay branch during this month would be a good starting point, as they had the best February of the three branches. 
+
+- Considering that the highest monthly sales for January and March are achieveable at the Naypyitaw and Yangon branches, this would suggest that it should be possible to remedy the poor sales experienced at these branches during the month of February. 
+
+- Possible reasons may include : Insufficient marketing spend during February, customers having less capital post holiday period, tourism being at a low during that month, product availability during February. Ideally, more data are needed to answer the specific question of why.
+
+--- 
+
+For business task **Q6** : Explore ratings by branch
+
+- Yangon had the highest number of Positive ratings, with 210 being between 7 and 10 stars.
+
+- Naypyitaw had the least Negative ratings, with 25 ratings of 4 stars, and 199 Positive ratings between 7 and 10 stars. 
+
+- Mandalay had the poorest performance of the three branches, with 30 Negative ratings of 4 stars and 118 Moderate ratings between 5 and 6 stars. 
+
+#### Recommendations
+
+- Investigate operational differences between Yangon and Mandalay branches, to determine how to improve the number of positive ratings for the Mandalay branch.
+
+- Investigate operational differences between Naypyitaw and Mandalay branches, to determine how to reduce the number of negative ratings for the Mandalay branch.
+
+- As with the product line ratings, the answer will be in the details of the customer ratings, so investigating them individually would yield actionable insights.
+
+---
+
+For business task **Q7** : 
+
+
+
+
+
+
+  

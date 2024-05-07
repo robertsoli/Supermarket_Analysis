@@ -33,7 +33,7 @@ The growth of supermarkets in highly populated cities are increasing and competi
 **Q7** : Calculate sales by payment method.
 
 
-**Q8** : Calculate sales by product line, split by gender. 
+**Q8** : Explore product line performance calculated by gender.
 
 
 **Q9** : Determine profit by customer type.
@@ -522,7 +522,7 @@ ORDER BY sales_total DESC
 
 ---
 
-**Q8** : Product line performance calculated by gender
+**Q8** : Explore product line performance calculated by gender
 
 ---
 
@@ -534,9 +534,24 @@ GROUP BY product_line, gender
 ORDER BY product_line, gender, total_sales DESC
 ```
 
+```sql
+SELECT
+    product_line,
+    SUM(CASE WHEN gender = 'Female' THEN order_value ELSE 0 END) AS female_sales,
+    SUM(CASE WHEN gender = 'Male' THEN order_value ELSE 0 END) AS male_sales,
+    SUM(CASE WHEN gender = 'Female' THEN order_value ELSE 0 END) - SUM(CASE WHEN gender = 'Male' THEN order_value ELSE 0 END) AS sales_difference
+FROM 
+    dbo.supermarket_sales
+	WHERE product_line IS NOT NULL
+GROUP BY 
+    product_line;
+```
+
 ---
 
 ![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/dfd8afcb-82c4-4d9a-981c-80e876520383)
+
+![image](https://github.com/robertsoli/Supermarket_Analysis/assets/156069037/3186fae6-3140-4842-a866-3284c731d273)
 
 ---
 
@@ -698,9 +713,15 @@ For business task **Q7** : Calculate sales by payment method
 
 #### Recommendations
 
-- Incentivize customers to use cash to avoid credit card cost to company.
+- Incentivize customers to use cash to avoid credit card charges to company.
 
-- 
+---
+
+For business task **Q8** : Explore product line performance calculated by gender
+
+- Women spend more than men on the following product lines:
+  - Food and Beverages by 
+  - 
 
 
 

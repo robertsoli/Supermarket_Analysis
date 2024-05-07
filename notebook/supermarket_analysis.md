@@ -719,10 +719,49 @@ For business task **Q7** : Calculate sales by payment method
 
 For business task **Q8** : Explore product line performance calculated by gender
 
-- Women spend more than men on the following product lines:
-  - Food and Beverages by 
-  - 
+- Women spend more than men on the following product lines over the first quarter:
 
+  - Food and Beverages by $ 10201 
+  - Home and Lifestyle by $ 6212
+  - Fashion Accessories by $ 6570
+  - Sports and Travel by $ 2025
+ 
+- Men spend more than women on the following product lines over the first quarter:
+
+  - Electronic Accessories by a marginal $ 142
+  - Health and Beauty by $ 12078
+
+ #### Recommendations
+
+ - Group product lines that are clearly performing well for a certain gender together in the store, in sections.
+ 
+ - Targeted marketing in store and online to specific gender groups based on the purchasing patterns observed.
+ 
+ - Rearrange the placement of the underperforming product lines to boost sales.
+
+---
+
+For business task **Q9** : Determine profit by customer type
+
+- Member purchases are higher than normal customer purchases for the months of February and March
+- Normal customer purchases are above member purchases for the month of January
+- Member purchases are higher than the overall average for the months of January and March
+- Normal customer purchases are higher than the overall average for the month of January
+
+> [!NOTE]
+> The difference in member and normal customer sales is very marginal, suggesting that the membership program needs input
+
+#### Recommendations
+
+- Grow the membership by these possible means:
+  
+  - Percentage discount for being a member
+  - Access to specials that normal customers do not have access to
+  - Point driven loyalty card where members can spend accumulated points
+
+---
+
+That concludes this project, thanks for reading! 
 
 
 

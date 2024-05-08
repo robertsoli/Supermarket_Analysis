@@ -18,7 +18,7 @@ As part of the learning journey, this project is based on a fictional supermarke
 
 #### Codes and Resources Used
 
-The following tools and software was used in creating this project :
+The following tools and software were used in creating this project :
 
  - Microsoft SQL Server Management Studio 20 for all cleaning and EDA
  - Tableau Public for charts and visualizations

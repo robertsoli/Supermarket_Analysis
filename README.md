@@ -10,29 +10,29 @@
 
 ---
 
-#### Project Overview
+### Project Overview
 
 As part of the learning journey, this project is based on a fictional supermarket's data and aims to provide insights into customer purchases, product performance and recommendations for optimizing the way the business operates. 
 
 ---
 
-#### Codes and Resources Used
+### Codes and Resources Used
 
 The following tools and software were used in creating this project :
 
- - Microsoft SQL Server Management Studio 20 for all cleaning and EDA
- - Tableau Public for charts and visualizations
+ - T-SQL | Microsoft SQL Server Management Studio 20
+ - Tableau Public
 
 ---
 
-#### Installation and Setup
+### Installation and Setup
 
 - Tableau Public was used to host the completed charts, so it can be viewed without the need to download software
 - Github was used to host the project publically, so there is no need for the viewer to download any software there either
 
 ---
 
-#### Data Structure
+### Data Structure
 
 The files name is supermarket_sales.csv and its structure is as follows: 
 
@@ -76,7 +76,7 @@ The files name is supermarket_sales.csv and its structure is as follows:
 
 ---
 
-#### Data Preprocessing
+### Data Preprocessing
 
 All cleaning and manipulation tasks were done in Microsoft Sql Server Management Studio 20.
 
@@ -93,7 +93,7 @@ All cleaning and manipulation tasks were done in Microsoft Sql Server Management
 
 ---
 
-#### Citations
+### Citations
 
 The following [dataset](https://www.kaggle.com/datasets/lovishbansal123/sales-of-a-supermarket) was obtained on the platform Kaggle, made public by the [owner](https://www.kaggle.com/lovishbansal123)
 

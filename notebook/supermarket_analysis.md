@@ -51,7 +51,7 @@ The table used in this case study is supermarket_sales.csv
 ### Tools used in analysis
 
 - Microsoft SQL Server Management Studio 20, using T-SQL for cleaning tasks, exploratory data analysis and manipulation
-- Tableau for related charts and a dashboard
+- Tableau for related charts
 
 ---
 

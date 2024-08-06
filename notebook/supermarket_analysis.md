@@ -761,6 +761,12 @@ For business task **Q9** : Determine profit by customer type
 
 ---
 
+In closing, below is a dashboard allowing the Supermarket to drill down on important metrics:
+
+![image](https://github.com/user-attachments/assets/42aaecc7-d813-403d-92a5-1330acca834b)
+
+---
+
 That concludes this project, thanks for reading! 
 
 
